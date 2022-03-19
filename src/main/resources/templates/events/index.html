@@ -7,16 +7,25 @@
 
     <nav th:replace="fragments :: navigation"></nav>
 
-    <p th:unless="${events} and ${events.size()}">No events!</p>
+    <p th:unless="${eventsMap} and ${eventsMap.size()}">No events!</p>
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Name</th>
+            <th>Description</th>
+            <th>Address</th>
         </tr>
     </thead>
-    <tr th:each="event : ${events}">
-        <td th:text="${event}">Default event name</td>
+    <tr th:each="event : ${eventsMap}">
+        <td th:text="${event.key}">Event name</td>
+        <td th:text="${event.value}">Event description</td>
+        <td th:if="${event.key.equals(strangeloop)}" th:text="${strangeloopAdr}"></td>
+        <td th:if="${event.key.equals(cyber)}" th:text="${cyberAdr}"></td>
+        <td th:if="${event.key.equals(codeDay)}" th:text="${codeDayAdr}"></td>
     </tr>
+<!--    <tr th:each="event : ${events}">-->
+<!--        <td th:text="${event}">Default event name</td>-->
+<!--    </tr>-->
 </table>
 
 </body>
