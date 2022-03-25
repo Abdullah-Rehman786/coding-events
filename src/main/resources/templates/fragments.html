@@ -7,13 +7,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
+
 <h1 th:fragment="header" th:text="${title}"></h1>
+
 <body>
+
 <nav th:fragment="navigation">
     <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="/events">Events</a></li>
         <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
         <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="/eventCategories/index">All Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="/eventCategories/create">Create Category</a></li>
+        <li class="nav-item"><a class="nav-link" href="/eventCategories/delete">Delete Category</a></li>
     </ul>
 </nav>
 
